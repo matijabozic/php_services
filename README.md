@@ -1,4 +1,4 @@
-## About this library ##
+## About ##
 
 This is Dependency Injection Container for PHP 5.3+. The goal of this library is to provide powerful but simple, lightweight and easy to configure Dependency Injection Container for PHP.
 
@@ -75,7 +75,7 @@ Now, how to define `$config` and variables used in `$services` should be clear, 
 
 ## Services Defintions ##
 
-Service Definitions are defined in $services array. Every service defined is again array, so we have multidimensional array, where every key represents Service name that can be retrived like this:
+Service Definitions are defined in `$services` array. Every service defined is again array, so we have multidimensional array, where every key represents Service name that can be retrived like this:
 <pre>
 $dic->getService('ServiceName');
 </pre>
@@ -188,7 +188,7 @@ array (
 Again, DoctrineOrm Service depends on DoctrineOrmConfig, but this time we use factory methods.
 
 Thats it, you should get a hold on how this all works. Its tested and works as it should.
-In future, Il try to find a way to define services with less lines of code, but without using YAML and create any dependencies. I want this library to be small and portable.
+In future, Il try to find a way to define services with less lines of code, but without using YAML and making this library depended on external libraries. I want this library to be small and portable.
 
 
 

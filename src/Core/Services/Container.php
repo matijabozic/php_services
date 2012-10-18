@@ -22,7 +22,7 @@
 		 * @var     array
 		 */
 		
-		protected $config = array();
+		protected $configs = array();
 		
 		/**
 		 * Services descriptions needed to build service properly
@@ -43,6 +43,27 @@
 		protected $shared = array();
 		
 		/**
+		 * Services constructor
+		 * 
+		 * @access  public
+		 * @param   array
+		 * @param   array
+		 * @return  void
+		 */
+		
+		public function __construct(array $configs = null, array $services = null)
+		{
+			if($configs === null XOR $services === null) {
+				throw new \InvalidArgumentException('Supply both configs and services or none!');	
+			}
+			
+			if($configs AND $services) {
+				$this->configs = $configs;
+				$this->services = $services;	
+			}
+		}		
+		
+		/**
 		 * Adds config array from file as array
 		 * 
 		 * @access  public
@@ -52,7 +73,7 @@
 		
 		public function setConfigs(array $configs)
 		{
-			$this->config = $configs;
+			$this->configs = $configs;
 		}
 		
 		/**
@@ -79,7 +100,7 @@
 		
 		public function addConfig($key, $value)
 		{
-			$this->config[$key] = $value;
+			$this->configs[$key] = $value;
 		}
 		
 		/**
@@ -92,7 +113,7 @@
 		
 		public function hasConfig($key)
 		{
-			if(isset($this->config[$key])) {
+			if(isset($this->configs[$key])) {
 				return true;
 			}
 			return false;
@@ -108,7 +129,7 @@
 		
 		public function getConfig($key)
 		{
-			return $this->config[$key];
+			return $this->configs[$key];
 		}	
 				
 		/**
