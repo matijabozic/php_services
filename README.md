@@ -102,7 +102,7 @@ Note that you would never ever use all of them to define a Service, if you are u
 
 <pre>
 ServiceName - name of your Service, you would use that name to get Service instance.
-class       - methods that should be called after class is created, and arguments to pass
+class       - services class name
 factory     - factory method, you should define class, method, and params that would be passed to that method.
 params      - arguments that will be passed to object constructor
 calls       - methods to call after class is instantiated, accepts arguments
